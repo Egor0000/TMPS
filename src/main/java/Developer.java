@@ -1,5 +1,9 @@
 package main.java;
 
+import main.java.User;
+import main.java.impl.Item;
+import main.java.impl.TodoList;
+
 public abstract class Developer implements User {
     private final TodoList todoList;
     private final int id;
@@ -39,5 +43,5 @@ public abstract class Developer implements User {
         item.setDeveloperEstimation(estimation);
     }
 
-
+    public abstract Developer clone();
 }

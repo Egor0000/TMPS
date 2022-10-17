@@ -1,11 +1,16 @@
-package main.java;
+package main.java.impl;
+
+import main.java.*;
+import main.java.enums.Department;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManagementBoard implements Simulation {
+public class Board implements Simulation {
+
     public void startSimulation() throws Exception {
-        System.out.println("STARTING MANAGEMENT SIMULATION");
+        System.out.println("STARTING DEV BOARD SIMULATION");
+
         TodoList todoList = TodoList.getInstance();
 
         List<Developer> devs = new ArrayList<>();
@@ -13,10 +18,24 @@ public class ManagementBoard implements Simulation {
         getNextDev( devs, Department.WEB,2);
 
         TeamLeader teamLeader = new TeamLeader(todoList, 0);
+        Item item = new Item.ItemBuilder(0)
+                .name("task1")
+                .content("todo1")
+                .build();
 
-        teamLeader.createItem(new Item.ItemBuilder(0).name("task1").content("todo1").build());
-        teamLeader.createItem(new Item.ItemBuilder(1).name("task2").content("todo2").build());
-        teamLeader.createItem(new Item.ItemBuilder(2).name("task3").content("todo3").build());
+        Item item2 = item.clone();
+        item2.setName("task2");
+        item2.setContent("todo2");
+        item2.setId(1);
+
+        Item item3 = item.clone();
+        item3.setName("task3");
+        item3.setContent("todo3");
+        item3.setId(2);
+
+        teamLeader.createItem(item);
+        teamLeader.createItem(item2);
+        teamLeader.createItem(item3);
 
         teamLeader.addPriority(0, 1);
         teamLeader.addPriority(1, 2);

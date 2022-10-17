@@ -1,7 +1,6 @@
-package main.java;
+package main.java.impl;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -69,7 +68,6 @@ public class TodoList {
 
     public void addComment(int itemId, String comment) throws Exception {
         Item item = getById(itemId);
-
         item.getComments().add(comment);
     }
 

@@ -1,4 +1,4 @@
-package main.java;
+package main.java.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,5 +160,19 @@ public class Item {
         public Item build() {
             return new Item(this);
         }
+    }
+
+    @Override
+    protected Item clone() throws CloneNotSupportedException {
+        super.clone();
+        Item item = new Item();
+        item.setId(this.id);
+        item.setName(this.name);
+        item.setContent(this.content);
+        item.setComments(List.copyOf(this.comments));
+        item.setDeveloperEstimation(this.developerEstimation);
+        item.setPriority(this.priority);
+        item.setTeamLeadEstimation(this.teamLeadEstimation);
+        return item;
     }
 }

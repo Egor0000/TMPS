@@ -1,13 +1,16 @@
-package main.java;
+package main.java.impl;
+
+import main.java.Developer;
+import main.java.enums.Department;
+import main.java.Simulation;
+import main.java.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board implements Simulation {
-
+public class ManagementBoard implements Simulation {
     public void startSimulation() throws Exception {
-        System.out.println("STARTING DEV BOARD SIMULATION");
-
+        System.out.println("STARTING MANAGEMENT SIMULATION");
         TodoList todoList = TodoList.getInstance();
 
         List<Developer> devs = new ArrayList<>();

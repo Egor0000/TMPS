@@ -1,4 +1,6 @@
-package main.java;
+package main.java.impl;
+
+import main.java.User;
 
 public class TeamLeader implements User {
     private final TodoList todoList;

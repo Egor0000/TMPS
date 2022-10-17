@@ -1,7 +1,11 @@
-package main.java;
+package main.java.impl;
+
+import main.java.*;
+import main.java.enums.Department;
+import main.java.utils.DevUtils;
 
 public class DeveloperFactory implements AbstractFactory<Developer> {
-    private TodoList todoList = TodoList.getInstance();
+    private final TodoList todoList = TodoList.getInstance();
 
     @Override
     public Developer create(String name) {

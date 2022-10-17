@@ -1,4 +1,7 @@
-package main.java;
+package main.java.impl;
+
+import main.java.AbstractFactory;
+import main.java.Simulation;
 
 public class SimulationFactory implements AbstractFactory<Simulation> {
     @Override

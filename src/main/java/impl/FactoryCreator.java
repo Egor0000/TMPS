@@ -1,4 +1,6 @@
-package main.java;
+package main.java.impl;
+
+import main.java.AbstractFactory;
 
 public class FactoryCreator {
     public AbstractFactory createFactory(String type) {
